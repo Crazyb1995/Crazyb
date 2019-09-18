@@ -14,7 +14,7 @@
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="jumbotron text-center" style="margin-bottom:0;width: 100%;height: 90%;background: #3cb371">
+    <div class="jumbotron text-center" style="margin-bottom:0;width: 100%;height: 95%;background: #3cb371">
         <h1 style="color: #ffffff">Welcome to Crazyb's Home</h1>
         <p style="color: #ffffff">You can login by your account or register now if you don't register yet !</p>
         <div class="col-md-4 col-md-offset-4" style="margin-top: 6%">
@@ -37,13 +37,13 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <span class="text-left" style="color: #ffffff;float: left;text-decoration: underline;margin-top: 10px">
+                    <span class="text-left" style="cursor: pointer;color: #ffffff;float: left;text-decoration: underline;margin-top: 10px;padding-left: 2px">
                         Forget password?</span>
                 </div>
             </form>
         </div>
     </div>
-    <div style="width: 100%;height: 10%;background: #3cb371">
+    <div style="width: 100%;height: 5%;background: #3cb371">
         <p class="text-center" style="color: #ffffff">Copyright © 2018-2019 Crazyb All Rights Reserved.</p>
     </div>
 </body>
