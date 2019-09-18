@@ -45,6 +45,11 @@
                         Register</button>
                 </div>
             </div>
+            <div class="form-group">
+                    <span class="text-left" style="color: #ffffff;float: left;text-decoration: underline;margin-top: 10px"
+                    onclick="window.location.href='login'">
+                        Already have account, Login now</span>
+            </div>
         </form>
     </div>
 </div>
