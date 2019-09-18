@@ -35,7 +35,12 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public String userRegister(){
+    public String userRegisterJsp(){
         return "register";
+    }
+
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public String userRegister(User user, Model model){
+        return "registerSuccess";
     }
 }

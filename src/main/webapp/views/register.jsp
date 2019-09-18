@@ -20,24 +20,28 @@
         otherwise start your journey by register now !</p>
     <p style="color: #ffffff">Love Susu</p>
     <div class="col-md-4 col-md-offset-4" style="margin-top: 1%">
-        <form role="form" action="${pageContext.request.contextPath}/register" method="post">
+        <form role="form" name="register" action="${pageContext.request.contextPath}/register" method="post">
             <div class="form-group" style="padding: 2px;padding-top: 0px">
-                <input class="form-control input" type="text" name="username" placeholder="username">
+                <input class="form-control input" type="text" name="username" placeholder="username" required
+                       pattern="^[0-9a-zA-Z]{6,16}$" title="please enter your nickname, 6-16 character">
             </div>
             <div class="form-group" style="padding: 2px">
-                <input class="form-control input" type="text" name="email" placeholder="email">
+                <input class="form-control input" type="text" name="email" placeholder="email" required
+                       pattern="^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$" title="please use valid email address">
             </div>
             <div class="form-group" style="padding: 2px">
-                <input class="form-control input" type="text" name="phone" placeholder="phone">
+                <input class="form-control input" type="text" name="phone" placeholder="phone" required
+                       pattern="^[0-9]{11}$" title="please use valid phone number">
             </div>
             <div class="form-group" style="padding: 2px">
-                <select class="form-control" name="male">
+                <select class="form-control" name="sex">
                     <option>Male</option>
                     <option>Female</option>
                 </select>
             </div>
             <div class="form-group" style="padding: 2px">
-                <input class="form-control input" type="text" name="password" placeholder="password">
+                <input class="form-control input" type="password" name="password" placeholder="password" required
+                       pattern="^[!_.?@0-9a-zA-Z]{6,16}$" title="6-16 character, include a-zA-Z0-9!_.?@.etc">
             </div>
             <div class="form-group">
                 <div style="margin: 0px;padding: 2px;">
