@@ -17,21 +17,22 @@
     <div class="jumbotron text-center" style="margin-bottom:0;width: 100%;height: 90%;background: #3cb371">
         <h1 style="color: #ffffff">Welcome to Crazyb's Home</h1>
         <p style="color: #ffffff">You can login by your account or register now if you don't register yet !</p>
-        <div class="col-md-4 col-md-offset-4" style="margin-top: 8%">
-            <form role="form" action="/login" method="post">
-                <div class="form-group" style="padding: 1px">
-                    <input class="form-control input" type="text" name="usename" placeholder="username">
+        <div class="col-md-4 col-md-offset-4" style="margin-top: 6%">
+            <form role="form" action="${pageContext.request.contextPath}/login" method="post">
+                <p class="text-left" style="color: firebrick;padding-left: 2px;font-size: small">${msg}</p>
+                <div class="form-group" style="padding: 2px;padding-top: 0px">
+                    <input class="form-control input" type="text" name="username" placeholder="username">
                 </div>
-                <div class="form-group" style="padding: 1px">
+                <div class="form-group" style="padding: 2px">
                     <input class="form-control input" type="text" name="password" placeholder="password">
                 </div>
                 <div class="form-group">
-                    <div class="col-md-9" style="margin: 0px;padding: 1px;">
+                    <div class="col-md-9" style="margin: 0px;padding: 2px;">
                         <button type="submit" class="btn btn-primary btn-block" style="margin: 0px">
                             Login</button>
                     </div>
-                    <div class="col-md-3" style="margin: 0px;padding: 1px">
-                        <button type="submit" class="btn btn-warning btn-block" style="margin: 0px">
+                    <div class="col-md-3" style="margin: 0px;padding: 2px">
+                        <button type="button" onclick="window.location.href='register'" class="btn btn-warning btn-block" style="margin: 0px">
                             Register</button>
                     </div>
                 </div>

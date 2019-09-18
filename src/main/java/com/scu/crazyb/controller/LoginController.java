@@ -1,6 +1,7 @@
 package com.scu.crazyb.controller;
 
 import com.scu.crazyb.bean.request.User;
+import com.scu.crazyb.common.CommonConstants;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,11 +25,17 @@ public class LoginController {
             return "redirect:main";
         }
 
+        model.addAttribute("msg", CommonConstants.INVALID_USERNAME_OR_PASSWD);
         return "login";
     }
 
     @RequestMapping(value = "/main")
     public String toMain(){
         return "main";
+    }
+
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String userRegister(){
+        return "register";
     }
 }
