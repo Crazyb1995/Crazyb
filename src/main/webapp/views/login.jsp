@@ -24,7 +24,7 @@
                     <input class="form-control input" type="text" name="username" placeholder="username">
                 </div>
                 <div class="form-group" style="padding: 2px">
-                    <input class="form-control input" type="text" name="password" placeholder="password">
+                    <input class="form-control input" type="password" name="password" placeholder="password">
                 </div>
                 <div class="form-group">
                     <div class="col-md-9" style="margin: 0px;padding: 2px;">

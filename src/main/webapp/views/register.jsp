@@ -19,8 +19,9 @@
     <p style="color: #ffffff">You can login directly if you already have an account,
         otherwise start your journey by register now !</p>
     <p style="color: #ffffff">Love Susu</p>
-    <div class="col-md-4 col-md-offset-4" style="margin-top: 1%">
+    <div class="col-md-4 col-md-offset-4">
         <form role="form" name="register" action="${pageContext.request.contextPath}/register" method="post">
+            <p class="text-left" style="color: firebrick;padding-left: 2px;font-size: small">${alreadHaveUser}</p>
             <div class="form-group" style="padding: 2px;padding-top: 0px">
                 <input class="form-control input" type="text" name="username" placeholder="username" required
                        pattern="^[0-9a-zA-Z]{6,16}$" title="please enter your nickname, 6-16 character">

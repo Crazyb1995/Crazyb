@@ -2,6 +2,9 @@ package com.scu.crazyb.controller;
 
 import com.scu.crazyb.bean.request.User;
 import com.scu.crazyb.common.CommonConstants;
+import com.scu.crazyb.dao.entity.UserEntity;
+import com.scu.crazyb.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +15,9 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class LoginController {
 
+    @Autowired
+    private UserService userService;
+
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginJsp(){
         return "login";
@@ -19,7 +25,8 @@ public class LoginController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(User user, Model model, HttpSession session){
-        if(user != null && "crazyb".equals(user.getUsername()) && "password".equals(user.getPassword()))
+        UserEntity userEntity = userService.findUserByName(user.getUsername());
+        if(userEntity!=null && userEntity.getPassword().equals(user.getPassword()))
         {
             session.setAttribute("USER_SESSION", user);
             return "redirect:main";
@@ -41,6 +48,12 @@ public class LoginController {
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String userRegister(User user, Model model){
+        if(userService.findUserByName(user.getUsername()) != null)
+        {
+            model.addAttribute("alreadHaveUser", CommonConstants.ALREADY_REGISTERD);
+            return "register";
+        }
+        userService.insertUser(user);
         return "registerSuccess";
     }
 }
