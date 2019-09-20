@@ -10,4 +10,6 @@ public interface UserService {
     void insertUser(User user);
 
     UserEntity findUserByName(String userName);
+
+    void updateUser(UserEntity user);
 }

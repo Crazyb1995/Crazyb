@@ -10,4 +10,6 @@ public interface UserDao {
     void insertUser(UserEntity user);
 
     UserEntity findUserByName(String userName);
+
+    void updateUser(UserEntity user);
 }

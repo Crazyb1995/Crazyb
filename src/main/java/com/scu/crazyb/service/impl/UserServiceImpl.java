@@ -24,12 +24,17 @@ public class UserServiceImpl implements UserService {
         userEntity.setRegisterTime(new Date());
         userEntity.setPhone(user.getPhone());
         userEntity.setSex(user.getSex());
-        userEntity.setUsername(user.getUsername());
+        userEntity.setUserName(user.getUsername());
         userDao.insertUser(userEntity);
     }
 
     @Override
     public UserEntity findUserByName(String userName) {
         return userDao.findUserByName(userName);
+    }
+
+    @Override
+    public void updateUser(UserEntity user) {
+        userDao.updateUser(user);
     }
 }

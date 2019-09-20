@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <span class="text-left" style="cursor: pointer;color: #ffffff;float: left;text-decoration: underline;margin-top: 10px;padding-left: 2px">
+                    <span class="text-left" style="cursor: pointer;color: #ffffff;float: left;text-decoration: underline;margin-top: 10px;padding-left: 2px" onclick="window.location.href='resetPassword'">
                         Forget password?</span>
                 </div>
             </form>

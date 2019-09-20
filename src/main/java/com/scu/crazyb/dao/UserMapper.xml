@@ -18,7 +18,7 @@
         )
         VALUES
         (
-        #{username},
+        #{userName},
         #{password},
         #{sex},
         #{phone},
@@ -28,6 +28,19 @@
    </insert>
 
   <select id="findUserByName" resultType="com.scu.crazyb.dao.entity.UserEntity">
-    SELECT * FROM tb_user WHERE user_name = #{userName}
+    SELECT user_name userName, email email, sex sex, phone phone, password password, last_login lastLogin, register_time registerTime
+     FROM tb_user WHERE user_name = #{userName} FOR UPDATE
   </select>
+
+  <update id="updateUser" parameterType="com.scu.crazyb.dao.entity.UserEntity">
+    UPDATE tb_user
+    <set>
+      <if test="password != null">password=#{password},</if>
+      <if test="sex != null">sex=#{sex},</if>
+      <if test="phone != null">phone=#{phone},</if>
+      <if test="email != null">email=#{email},</if>
+      <if test="lastLogin != null">last_login=#{lastLogin},</if>
+    </set>
+    WHERE user_name=#{userName}
+  </update>
 </mapper>

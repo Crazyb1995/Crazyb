@@ -23,6 +23,41 @@ public class LoginController {
         return "login";
     }
 
+    @RequestMapping(value = "/resetPassword", method = RequestMethod.GET)
+    public String resetPasswordJsp(){
+        return "resetPassword";
+    }
+
+    @RequestMapping(value = "/resetPassword", method = RequestMethod.POST)
+    public String resetPassword(User user, Model model)
+    {
+        System.out.println(user.toString());
+
+        UserEntity userEntity = userService.findUserByName(user.getUsername());
+        if (userEntity == null){
+            model.addAttribute("msg", "Can't find user " + user.getUsername());
+            return "resetPassword";
+        }
+
+        if (user.getEmail()!=null && user.getEmail().length()>0){
+            if (!user.getEmail().equals(userEntity.getEmail())) {
+                model.addAttribute("msg", "Invalid email address");
+                return "resetPassword";
+            }
+        }
+
+        if (user.getPhone()!=null && user.getPhone().length()>0){
+            if (!user.getPhone().equals(userEntity.getPhone())) {
+                model.addAttribute("msg", "Invalid phone number");
+                return "resetPassword";
+            }
+        }
+
+        userEntity.setPassword(user.getPassword());
+        userService.updateUser(userEntity);
+        return "resetPasswordSuccess";
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(User user, Model model, HttpSession session){
         UserEntity userEntity = userService.findUserByName(user.getUsername());
